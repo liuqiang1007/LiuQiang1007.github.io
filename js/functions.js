@@ -82,11 +82,11 @@ function startHeartAnimation() {
 				} else {
 					progress++;
 				}
-				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
+				$ele.html(str.substring(0, progress) + (progress & 1 ? ' ' : ''));
 				if (progress >= str.length) {
 					clearInterval(timer);
 				}
-			}, 75);
+			}, 1);
 		});
 		return this;
 	};
@@ -128,7 +128,7 @@ function adjustWordsPosition() {
 }
 
 function adjustCodePosition() {
-	$('#code').css("margin-top", ($("#garden").height() - $("#code").height()+130) / 2);
+	$('#code').css("margin-top", ($("#garden").height() - $("#code").height()) / 2);
 }
 
 function showLoveU() {

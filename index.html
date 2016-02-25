@@ -17,6 +17,55 @@
     transition: all 1s .3s;
     position: absolute;
 }
+.title1{
+	width: 300px;
+    font-size: 1.5em;
+    opacity: 1;
+    margin-top: 10px;
+    margin-left: 240px;
+    transition: all 1s .3s;
+    position: absolute;
+}
+.breath {
+				margin:100px auto;
+				text-indent:-999em;
+				height:4px;
+				line-height: 4px;
+				width: 50px;
+				overflow:hidden;
+				
+				
+				color: #fff;
+				opacity:0.3;
+
+				-webkit-box-shadow: 0 0 5px #99dd33;
+				-moz-box-shadow: 0 0 5px #99dd33;
+				-ms-box-shadow: 0 0 5px #99dd33;
+				-o-box-shadow: 0 0 5px #99dd33;
+				box-shadow: 0 0 5px #99dd33;
+				-webkit-border-radius:2px;
+				-moz-border-radius:2px;
+				-ms-border-radius:2px;
+				-o-border-radius:2px;
+				border-radius:2px;
+				
+				-webkit-animation-name: breath;
+				-webkit-animation-duration: 6s;		/*人的普通呼吸时间是3秒每次，深呼吸时间是6秒每次*/
+				-webkit-animation-timing-function: ease-in-out;
+				-webkit-animation-iteration-count: infinite;
+			}
+
+			@-webkit-keyframes 'breath' {
+				from {
+					opacity:1;
+				}
+				50% {
+					opacity:0.3;
+				}
+				to {
+					opacity:1;
+				}
+			}
 </style>
 <link href="css/default.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/fish88.css">
@@ -31,34 +80,37 @@
 
 <div id="mainDiv">
 <div class="title" style="display:none">
-	  <img src="http://magicapi.vmovier.com/Public/Magicapi/images/sum/t0.png" width="60%">
+	  <img src="images/t0.png" width="60%">
 </div>
-
 	<div id="content">
-		<div id="code">
-			<span class="comments">多少次的选择，促成我们的相遇</span><br />
-			<span class="comments">或许是缘分，亦或是注定</span><br />
-			<!-- The girl loved the boy;<br /> -->
-			<span class="comments">相遇不容易，几乎为零的几率</span><br />
-		<!-- 	The boy can not be separated the girl;<br /> -->
-			<span class="comments">时光.</span><br />
+		<div id="code">		
+			<span class="comments breath">多少次的选择，促成我们的相遇,几乎为零的几率</span><br />
+			<span class="comments breath">或许是缘分，亦或是注定</span><br /><br />
 			在相遇的91天中，我们见面16次，平均每次在一起3.5小时<br />
-			<span class="comments">足迹</span><br />
+			<br />
 			一起坐过两次公交，两次地铁，爬过两座山，去过两个公园，品尝了15家不同的美食<br />
-			<span class="comments">未来</span><br />
-			已经并肩步行走过近40公里路程，然在深圳往北只到牛栏前，往东仅到梧桐山，往西也止步于深圳湾，还有很多好玩有趣的地方没有去过，南山的海上世界，小梅沙的海洋世界，还有深圳最美的海岸线西冲<br />
-			2016年，希望能够一直和你走下去…<br />
+			<br />
+			已经并肩步行走过近40公里路程，然在深圳往北只到牛栏前，往东仅到梧桐山，往西也止步于深圳湾，还有很多好玩有趣的地方没有去过，南山的海上世界，小梅沙的海洋世界，还有深圳最美的海岸线西冲<br /><br />
+			<span class=" comments breath">
+			希望能够一直和你走下去<br />
+			吃着同样的食物<br />
+			看着同样的风景<br />
+			一起这样慢慢变老.<br />
+			</span>
+			<div class="title1" style="display:none;">
+				
+				<img src="images/t1.png" width="100%"></div>
 		</div>
+		
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
 			<div id="words">
 				<div id="messages">
-					亲爱的，这是我们相识的时光。
+					亲爱的，这是我们度过的时光。
 					<div id="elapseClock"></div>
 				</div>
-				<div id="loveu">
-					愿伴你走过余生<br/>
-					<div class="signature">- LiuQiang</div>
+				<div id="loveu">愿伴你走过余生<br/>
+					<div class="signature">- LQ 16.2.14</div>
 				</div>
 			</div>
 		</div>
@@ -68,7 +120,12 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".title").fadeIn("2000");
-	
+	 setInterval(function(){
+	 	var title1=$('.title1');
+	 	if (title1) {
+	 		$(".title1").fadeIn("900");
+	 	};
+	 },10);
 })
 
 var offsetX = $("#loveHeart").width() / 2;
